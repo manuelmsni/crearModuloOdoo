@@ -1,0 +1,34 @@
+<odoo>
+    <data>
+        <report
+            id="report_pelicula"
+            model="videoclub.pelicula"
+            string="informe pelicula"
+            name="videoclub_manuel_martin.report_pelicula_view"
+            file="videoclub.report_pelicula"
+            report_type="qweb-pdf" />
+        <template id="report_pelicula_view">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="pelicula">
+                    <t t-call="web.external_layout">
+                        <div class="page">
+                            <h2 t-field="pelicula.titulo" />
+                            <div>
+                                <strong>Duración:</strong>
+                                <span t-field="pelicula.duracion" />
+                            </div>
+                            <div>
+                                <strong>Director:</strong>
+                                <span t-field="pelicula.director" />
+                            </div>
+                            <div>
+                                <strong>Industria:</strong>
+                                <span t-field="pelicula.industria" />
+                            </div>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>

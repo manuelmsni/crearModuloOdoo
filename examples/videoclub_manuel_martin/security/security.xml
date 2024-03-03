@@ -1,0 +1,7 @@
+<odoo>
+    <data>
+        <record id="videoclub_manager" model="res.groups">
+            <field name="name">VideoclubResponsable</field>
+        </record>
+    </data>
+</odoo>

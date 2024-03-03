@@ -1,0 +1,99 @@
+<odoo>
+    <data>
+
+        <record model="videoclub.genero" id="genero_accion">
+            <field name="nombre">0</field>
+        </record>
+        
+        <record model="videoclub.genero" id="genero_drama">
+            <field name="nombre">3</field>
+        </record>
+
+        <record model="videoclub.genero" id="genero_comedia">
+            <field name="nombre">1</field>
+        </record>
+
+        <record model="videoclub.genero" id="genero_terror">
+            <field name="nombre">6</field>
+        </record>
+
+        <record model="videoclub.genero" id="genero_musical">
+            <field name="nombre">2</field>
+        </record>
+        
+        <record model="videoclub.genero" id="genero_aventura">
+            <field name="nombre">4</field>
+        </record>
+        
+        <record model="videoclub.genero" id="genero_western">
+            <field name="nombre">5</field>
+        </record>
+        
+        <record model="videoclub.genero" id="genero_suspense">
+            <field name="nombre">7</field>
+        </record>
+
+        <record model="videoclub.pelicula" id="pelicula_bambi">
+            <field name="titulo">Bambi</field>
+            <field name="director">David Hand</field>
+            <field name="industria">5</field>
+            <field name="duracion">70</field>
+            <field name="sinopsis">Un cervatillo pierde a su madre.</field>
+            <field name="genero" ref="genero_drama"/>
+        </record>
+
+        <record model="videoclub.pelicula" id="pelicula_superbad">
+            <field name="titulo">Superbad</field>
+            <field name="director">Greg Mottola</field>
+            <field name="industria">0</field>
+            <field name="duracion">113</field>
+            <field name="sinopsis">Dos amigos intentan disfrutar su vida antes de la universidad.</field>
+            <field name="genero" ref="genero_comedia"/>
+        </record>
+
+        <record model="videoclub.pelicula" id="pelicula_it">
+            <field name="titulo">It</field>
+            <field name="director">Andy Muschietti</field>
+            <field name="industria">0</field>
+            <field name="duracion">135</field>
+            <field name="sinopsis">Un grupo de niños enfrenta sus peores miedos cuando buscan respuestas al mal que aterroriza su ciudad.</field>
+            <field name="genero" ref="genero_terror"/>
+        </record>
+
+         <record model="videoclub.pelicula" id="pelicula_la_la_land">
+            <field name="titulo">La La Land</field>
+            <field name="director">Damien Chazelle</field>
+            <field name="industria">0</field>
+            <field name="duracion">128</field>
+            <field name="sinopsis">Una historia de amor entre una aspirante a actriz y un músico de jazz en Los Ángeles.</field>
+            <field name="genero" ref="genero_musical"/>
+        </record>
+
+        <record model="videoclub.pelicula" id="pelicula_indiana_jones">
+            <field name="titulo">Indiana Jones y el Arca Perdida</field>
+            <field name="director">Steven Spielberg</field>
+            <field name="industria">0</field>
+            <field name="duracion">115</field>
+            <field name="sinopsis">Un arqueólogo aventurero compite con nazis para encontrar un artefacto histórico.</field>
+            <field name="genero" ref="genero_aventura"/>
+        </record>
+
+        <record model="videoclub.pelicula" id="pelicula_the_good_the_bad_and_the_ugly">
+            <field name="titulo">El bueno, el malo y el feo</field>
+            <field name="director">Sergio Leone</field>
+            <field name="industria">3</field>
+            <field name="duracion">161</field>
+            <field name="sinopsis">Tres hombres buscan un tesoro escondido en medio de la guerra civil estadounidense.</field>
+            <field name="genero" ref="genero_western"/>
+        </record>
+
+        <record model="videoclub.pelicula" id="pelicula_gone_girl">
+            <field name="titulo">Perdida</field>
+            <field name="director">David Fincher</field>
+            <field name="industria">0</field>
+            <field name="duracion">149</field>
+            <field name="sinopsis">La desaparición de la esposa de un hombre se convierte en el centro de un intenso escrutinio mediático.</field>
+            <field name="genero" ref="genero_suspense"/>
+        </record>
+    </data>
+</odoo>

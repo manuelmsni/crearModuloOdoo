@@ -1,0 +1,88 @@
+<odoo>
+  <data>
+
+    <!-- Vista de árbol -->
+
+    <record model="ir.ui.view" id="videoclub_manuel_martin.genero_tree">
+      <field name="name">videoclub.genero.tree</field>
+      <field name="model">videoclub.genero</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="nombre"/>
+          <!-- "Tabla" de peliculas -->
+          <field name="peliculas">
+            <tree>
+              <field name="titulo"/>
+              <field name="director"/>
+              <field name="duracion"/>
+            </tree>
+          </field>
+        </tree>
+      </field>
+    </record>
+
+    <!-- Vista de formulario -->
+
+    <record model="ir.ui.view" id="videoclub_manuel_martin.pelicula_form">
+      <field name="name">videoclub.pelicula.form</field>
+      <field name="model">videoclub.pelicula</field>
+      <field name="arch" type="xml">
+        <form string="Información de la Película">
+          <sheet>
+            <group string="Información de la Película" name="main_info">
+              <group string="Detalles Película" name="movie_details">
+                <field name="titulo"/>
+                <field name="director"/>
+                <field name="industria"/>
+              </group>
+              <group string="Información Adicional" name="additional_info">
+                <field name="duracion"/>
+                <field name="genero"/>
+              </group>
+            </group>
+            <notebook>
+              <page string="Sinopsis">
+                <field name="sinopsis" nolabel="1"/>
+              </page>
+            </notebook>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <!-- Vista de búsqueda -->
+
+    <record model="ir.ui.view" id="videoclub_manuel_martin.pelicula_search_view">
+      <field name="name">videoclub.pelicula.search</field>
+      <field name="model">videoclub.pelicula</field>
+      <field name="arch" type="xml">
+        <search>
+          <field name="titulo" string="Título"/>
+          <field name="genero" string="Género"/>
+          <filter name="duracion" domain="[('duracion','&lt;=',100)]"/>
+        </search>
+      </field>
+    </record>
+
+    <!-- Acciones para abrir las vistas de los modelos -->
+
+    <record model="ir.actions.act_window" id="videoclub_manuel_martin.genero_action_window">
+      <field name="name">videoclub.genero.action_window</field>
+      <field name="res_model">videoclub.genero</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="videoclub_manuel_martin.pelicula_action_window">
+      <field name="name">videoclub.pelicula.action_window</field>
+      <field name="res_model">videoclub.pelicula</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Menús -->
+
+    <menuitem name="Videoclub" id="videoclub_manuel_martin.menu_root" action="videoclub_manuel_martin.pelicula_action_window" /> <!-- groups="videoclub_manager" -->
+    <menuitem name="Genero" id="videoclub_manuel_martin.genero_menu" parent="videoclub_manuel_martin.menu_root" action="videoclub_manuel_martin.genero_action_window" /> <!-- groups="videoclub_manager" -->
+    <menuitem name="Peliculas" id="videoclub_manuel_martin.pelicula_menu" parent="videoclub_manuel_martin.menu_root" action="videoclub_manuel_martin.pelicula_action_window"/> <!-- groups="videoclub_manager" -->
+    
+  </data>
+</odoo>
