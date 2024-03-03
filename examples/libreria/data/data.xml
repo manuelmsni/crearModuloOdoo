@@ -1,0 +1,22 @@
+<odoo>
+    <data>
+
+        <record model="libreria.categoria" id="categoria_Novela">
+            <field name="name">Novela</field>
+            <field name="descripcion">Novela</field>
+        </record>
+        
+        <record model="libreria.categoria" id="categoria_ensayo">
+            <field name="name">Ensayo</field>
+            <field name="descripcion">Ensayo</field>
+        </record>
+
+        <record model="libreria.libro" id="libro_alegria">
+            <field name="name">Alegria</field>
+            <field name="descripcion">Aleria</field>
+            <field name="ejemplares">10</field>
+            <field name="precio">7</field>
+        </record>
+
+    </data>
+</odoo>
