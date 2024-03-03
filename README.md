@@ -1,1 +1,1 @@
-Link: <a href="https://manuelmsni.github.io/crearModuloOdoo">[Link]</a>
+Link: <a href="https://manuelmsni.github.io/crearModuloOdoo" target="_blank">[Link]</a>
