@@ -1,0 +1,32 @@
+<odoo>
+    <data>
+        <!-- Informe de Género -->
+        <report
+            id="libreria_martin_manuel_report_genero"
+            model="mms.genero"
+            string="Informe de Género"
+            name="libreria_martin_manuel.report_genero_view"
+            file="libreria_martin_manuel.report_genero"
+            report_type="qweb-pdf" />
+
+        <template id="report_genero_view">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="genero">
+                    <t t-call="web.external_layout">
+                        <div class="page">
+                            <h2>Género: <span t-field="genero.nombre"/></h2>
+                            <div>
+                                <strong>Libros en este Género:</strong>
+                                <ul>
+                                    <t t-foreach="genero.libros" t-as="libro">
+                                        <li><span t-field="libro.titulo"/></li>
+                                    </t>
+                                </ul>
+                            </div>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>

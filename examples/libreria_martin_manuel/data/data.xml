@@ -1,0 +1,46 @@
+<odoo>
+    <data noupdate="1">
+        <!-- Autores de Prueba -->
+        <record id="autor_prueba1" model="mms.autor">
+            <field name="nombre">Gabriel</field>
+            <field name="apellidos">García Márquez</field>
+            <field name="nacionalidad">Colombiano</field>
+            <field name="nacimiento">1927-03-06</field>
+        </record>
+
+        <record id="autor_prueba2" model="mms.autor">
+            <field name="nombre">J.K.</field>
+            <field name="apellidos">Rowling</field>
+            <field name="nacionalidad">Británica</field>
+            <field name="nacimiento">1965-07-31</field>
+        </record>
+
+        <!-- Géneros de Prueba -->
+        <record id="genero_prueba1" model="mms.genero">
+            <field name="nombre">3</field>
+        </record>
+
+        <record id="genero_prueba2" model="mms.genero">
+            <field name="nombre">6</field>
+        </record>
+
+        <!-- Libros de Prueba -->
+        <record id="libro_prueba1" model="mms.libro">
+            <field name="titulo">Cien años de soledad</field>
+            <field name="isbn">978-3-16-148410-0</field>
+            <field name="editorial">Editorial Sudamericana</field>
+            <field name="paginas">417</field>
+            <field name="autor" ref="autor_prueba1"/>
+            <field name="genero" ref="genero_prueba2"/>
+        </record>
+
+        <record id="libro_prueba2" model="mms.libro">
+            <field name="titulo">Harry Potter y la piedra filosofal</field>
+            <field name="isbn">978-1-23-456789-7</field>
+            <field name="editorial">Bloomsbury</field>
+            <field name="paginas">223</field>
+            <field name="autor" ref="autor_prueba2"/>
+            <field name="genero" ref="genero_prueba1"/>
+        </record>
+    </data>
+</odoo>

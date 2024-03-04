@@ -1,0 +1,48 @@
+<odoo>
+    <data>
+        <report
+            id="libreria_martin_manuel_report_libro"
+            model="mms.libro"
+            string="Informe de Libro"
+            name="libreria_martin_manuel.report_libro_view"
+            file="libreria_martin_manuel.report_libro"
+            report_type="qweb-pdf" />
+        <template id="report_libro_view">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="libro">
+                    <t t-call="web.external_layout">
+                        <div class="page">
+                            <h2 t-field="libro.titulo" />
+                            <div>
+                                <strong>ISBN:</strong>
+                                <span t-field="libro.isbn" />
+                            </div>
+                            <div>
+                                <strong>Editorial:</strong>
+                                <span t-field="libro.editorial" />
+                            </div>
+                            <div>
+                                <strong>Páginas:</strong>
+                                <span t-field="libro.paginas" />
+                            </div>
+                            <div>
+                                <strong>Autor:</strong>
+                                <span t-field="libro.autor.nombre" />
+                                <span t-field="libro.autor.apellidos" />
+                            </div>
+                            <div>
+                                <strong>Género:</strong>
+                                <t t-if="libro.genero">
+                                    <span t-field="libro.genero.nombre"/>
+                                </t>
+                                <t t-else="">
+                                    Sin especificar
+                                </t>
+                            </div>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>

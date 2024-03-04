@@ -1,0 +1,134 @@
+<odoo>
+  <data>
+
+    <!-- Vistas de autor -->
+    <record model="ir.ui.view" id="libreria_martin_manuel.autor_tree_view">
+      <field name="name">mms.autor.tree</field>
+      <field name="model">mms.autor</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="nombre" />
+          <field name="apellidos" />
+          <field name="nacionalidad" />
+          <field name="nacimiento" />
+        </tree>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="libreria_martin_manuel.autor_form_view">
+      <field name="name">mms.autor.form</field>
+      <field name="model">mms.autor</field>
+      <field name="arch" type="xml">
+        <form string="Autor">
+          <sheet>
+            <group name="group_top" string="Información Principal" colspan="4">
+              <field name="nombre"/>
+              <field name="apellidos"/>
+            </group>
+            <group name="group_bottom" string="Detalles">
+              <field name="nacionalidad"/>
+              <field name="nacimiento"/>
+            </group>
+            <notebook>
+              <page string="Libros Publicados">
+                <field name="libros" nolabel="1"/>
+              </page>
+            </notebook>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <!-- Vistas de genero -->
+    <record model="ir.ui.view" id="libreria_martin_manuel.genero_tree_view">
+      <field name="name">mms.genero.tree</field>
+      <field name="model">mms.genero</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="nombre" />
+        </tree>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="libreria_martin_manuel.genero_form_view">
+      <field name="name">mms.genero.form</field>
+      <field name="model">mms.genero</field>
+      <field name="arch" type="xml">
+        <form string="Género">
+          <sheet>
+            <group name="group_top" string="Información del Género" colspan="4">
+              <field name="nombre"/>
+            </group>
+            <notebook>
+              <page string="Libros del Género">
+                <field name="libros" nolabel="1"/>
+              </page>
+            </notebook>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <!-- Vistas de libro -->
+    <record model="ir.ui.view" id="libreria_martin_manuel.libro_tree_view">
+      <field name="name">mms.libro.tree</field>
+      <field name="model">mms.libro</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="titulo" />
+          <field name="isbn" />
+          <field name="editorial" />
+          <field name="paginas" />
+          <field name="autor" />
+          <field name="genero" />
+        </tree>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="libreria_martin_manuel.libro_form_view">
+      <field name="name">mms.libro.form</field>
+      <field name="model">mms.libro</field>
+      <field name="arch" type="xml">
+        <form string="Libro">
+          <sheet>
+            <group name="group_top" string="Información Principal" colspan="4">
+              <field name="titulo"/>
+              <field name="isbn"/>
+            </group>
+            <group name="group_middle" string="Detalles de Publicación">
+              <field name="editorial"/>
+              <field name="paginas"/>
+            </group>
+            <group name="group_bottom" string="Clasificación">
+              <field name="autor" options="{'no_create': True}"/>
+              <field name="genero" options="{'no_create': True}"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <!-- Acciones -->
+    <record model="ir.actions.act_window" id="libreria_martin_manuel.autor_action_window">
+      <field name="name">Autores</field>
+      <field name="res_model">mms.autor</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="libreria_martin_manuel.genero_action_window">
+      <field name="name">Generos</field>
+      <field name="res_model">mms.genero</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="libreria_martin_manuel.libro_action_window">
+      <field name="name">Libros</field>
+      <field name="res_model">mms.libro</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Menus -->
+    <menuitem id="libreria_martin_manuel.menu_root" name="Libreria" action="libreria_martin_manuel.libro_action_window" />
+    <menuitem id="libreria_martin_manuel.autor_menu" name="Autores" parent="libreria_martin_manuel.menu_root" action="libreria_martin_manuel.autor_action_window" />
+    <menuitem id="libreria_martin_manuel.genero_menu" name="Generos" parent="libreria_martin_manuel.menu_root" action="libreria_martin_manuel.genero_action_window" />
+    <menuitem id="libreria_martin_manuel.libro_menu" name="Libros" parent="libreria_martin_manuel.menu_root" action="libreria_martin_manuel.libro_action_window" />
+
+  </data>
+</odoo>

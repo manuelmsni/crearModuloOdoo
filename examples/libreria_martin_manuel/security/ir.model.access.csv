@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_libreria_martin_manuel_libreria_martin_manuel,libreria__martin_manuel.libreria_martin_manuel,model_libreria_martin_manuel_libreria_martin_manuel,base.group_user,1,1,1,1

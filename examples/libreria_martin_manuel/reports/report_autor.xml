@@ -1,0 +1,40 @@
+<odoo>
+    <data>
+        <!-- Informe de Autor -->
+        <report
+            id="libreria_martin_manuel_report_autor"
+            model="mms.autor"
+            string="Informe de Autor"
+            name="libreria_martin_manuel.report_autor_view"
+            file="libreria_martin_manuel.report_autor"
+            report_type="qweb-pdf" />
+            
+        <template id="report_autor_view">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="autor">
+                    <t t-call="web.external_layout">
+                        <div class="page">
+                            <h2>Autor: <span t-field="autor.nombre"/> <span t-field="autor.apellidos"/></h2>
+                            <div>
+                                <strong>Nacionalidad:</strong>
+                                <span t-field="autor.nacionalidad"/>
+                            </div>
+                            <div>
+                                <strong>Fecha de Nacimiento:</strong>
+                                <span t-field="autor.nacimiento"/>
+                            </div>
+                            <div>
+                                <strong>Libros Publicados:</strong>
+                                <ul>
+                                    <t t-foreach="autor.libros" t-as="libro">
+                                        <li><span t-field="libro.titulo"/></li>
+                                    </t>
+                                </ul>
+                            </div>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>
